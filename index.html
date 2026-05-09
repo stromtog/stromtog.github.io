@@ -5,7 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TechFixGenius | Linux Infrastructure Engineer</title>
+<title>TechFixGenius | Linux & Infrastructure Engineer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -16,99 +21,331 @@
 }
 
 body{
-    font-family:Arial,sans-serif;
-    background:#0f172a;
+    font-family:'Inter',sans-serif;
+    background:#0b1120;
     color:white;
-    line-height:1.6;
+    overflow-x:hidden;
 }
 
 .container{
     width:90%;
-    max-width:1100px;
+    max-width:1200px;
     margin:auto;
 }
+
+section{
+    padding:100px 0;
+}
+
+/* =========================
+NAVBAR
+========================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(11,17,32,0.75);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.nav-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+    color:#60a5fa;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    color:#cbd5e1;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+/* =========================
+HERO
+========================= */
 
 .hero{
     min-height:100vh;
     display:flex;
     align-items:center;
-    text-align:center;
-    background:linear-gradient(to bottom,#0f172a,#111827);
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:#2563eb;
+    filter:blur(180px);
+    opacity:0.18;
+    top:-250px;
+    right:-150px;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:#7c3aed;
+    filter:blur(160px);
+    opacity:0.12;
+    bottom:-200px;
+    left:-100px;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.hero-text{
+    position:relative;
+    z-index:2;
+}
+
+.hero-badge{
+    display:inline-block;
+    padding:10px 18px;
+    background:rgba(37,99,235,0.15);
+    border:1px solid rgba(96,165,250,0.3);
+    border-radius:999px;
+    color:#93c5fd;
+    margin-bottom:25px;
+    font-size:14px;
 }
 
 .hero h1{
-    font-size:64px;
-    margin-bottom:20px;
+    font-size:72px;
+    line-height:1.05;
+    margin-bottom:30px;
+    font-weight:800;
 }
 
 .hero p{
-    font-size:24px;
     color:#94a3b8;
-    max-width:800px;
-    margin:auto;
+    font-size:22px;
+    line-height:1.7;
+    margin-bottom:40px;
+    max-width:650px;
+}
+
+.buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
 .btn{
-    display:inline-block;
-    margin-top:40px;
-    padding:16px 32px;
-    background:#2563eb;
-    color:white;
+    padding:18px 34px;
+    border-radius:16px;
     text-decoration:none;
-    border-radius:10px;
-    font-weight:bold;
+    font-weight:700;
     transition:0.3s;
 }
 
-.btn:hover{
+.btn-primary{
+    background:#2563eb;
+    color:white;
+    box-shadow:0 10px 40px rgba(37,99,235,0.35);
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
     background:#1d4ed8;
 }
 
-.section{
-    padding:90px 0;
+.btn-secondary{
+    border:1px solid rgba(255,255,255,0.1);
+    color:white;
+    background:rgba(255,255,255,0.03);
 }
 
+.btn-secondary:hover{
+    background:rgba(255,255,255,0.07);
+}
+
+/* =========================
+RIGHT PANEL
+========================= */
+
+.hero-cards{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    position:relative;
+    z-index:2;
+}
+
+.mini-card{
+    background:linear-gradient(
+        145deg,
+        rgba(30,41,59,0.9),
+        rgba(15,23,42,0.95)
+    );
+
+    border:1px solid rgba(255,255,255,0.06);
+
+    border-radius:28px;
+
+    padding:30px;
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.03);
+
+    transition:0.3s;
+}
+
+.mini-card:hover{
+    transform:translateY(-6px);
+}
+
+.mini-card h3{
+    font-size:22px;
+    margin-bottom:15px;
+}
+
+.mini-card p{
+    color:#94a3b8;
+    font-size:16px;
+    line-height:1.6;
+}
+
+/* =========================
+SECTION
+========================= */
+
 .section-title{
-    font-size:42px;
-    margin-bottom:50px;
     text-align:center;
+    font-size:52px;
+    margin-bottom:20px;
+    font-weight:800;
+}
+
+.section-sub{
+    text-align:center;
+    color:#94a3b8;
+    max-width:700px;
+    margin:0 auto 70px auto;
+    font-size:20px;
+    line-height:1.7;
 }
 
 .cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+    gap:28px;
 }
 
 .card{
-    background:#1e293b;
-    padding:30px;
-    border-radius:16px;
-    border:1px solid #334155;
+    background:linear-gradient(
+        160deg,
+        rgba(30,41,59,0.9),
+        rgba(15,23,42,0.95)
+    );
+
+    border:1px solid rgba(255,255,255,0.06);
+
+    padding:35px;
+
+    border-radius:28px;
+
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(96,165,250,0.4);
+}
+
+.card-icon{
+    font-size:40px;
+    margin-bottom:20px;
 }
 
 .card h3{
+    font-size:26px;
     margin-bottom:15px;
-    font-size:24px;
 }
 
 .card p{
+    color:#94a3b8;
+    line-height:1.8;
+}
+
+/* =========================
+ABOUT
+========================= */
+
+.about-box{
+    background:linear-gradient(
+        145deg,
+        rgba(30,41,59,0.9),
+        rgba(15,23,42,0.95)
+    );
+
+    border:1px solid rgba(255,255,255,0.06);
+
+    border-radius:36px;
+
+    padding:60px;
+
+    text-align:center;
+
+    max-width:1000px;
+
+    margin:auto;
+}
+
+.about-box p{
+    font-size:22px;
+    line-height:1.9;
     color:#cbd5e1;
 }
 
-.about{
-    text-align:center;
-    max-width:900px;
-    margin:auto;
-    color:#cbd5e1;
-    font-size:20px;
-}
+/* =========================
+FOOTER
+========================= */
 
 .footer{
-    padding:50px 0;
+    padding:70px 0;
+    border-top:1px solid rgba(255,255,255,0.06);
     text-align:center;
-    border-top:1px solid #334155;
+}
+
+.footer h3{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.footer p{
     color:#94a3b8;
+    margin-bottom:10px;
 }
 
 .footer a{
@@ -116,18 +353,58 @@ body{
     text-decoration:none;
 }
 
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:980px){
+
+.hero-grid{
+    grid-template-columns:1fr;
+}
+
+.hero{
+    padding-top:120px;
+}
+
+.hero h1{
+    font-size:54px;
+}
+
+.hero-cards{
+    grid-template-columns:1fr;
+}
+
+}
+
 @media(max-width:768px){
+
+.nav-links{
+    display:none;
+}
 
 .hero h1{
     font-size:42px;
 }
 
 .hero p{
-    font-size:20px;
+    font-size:18px;
 }
 
 .section-title{
-    font-size:32px;
+    font-size:38px;
+}
+
+.section-sub{
+    font-size:18px;
+}
+
+.about-box{
+    padding:40px 25px;
+}
+
+.about-box p{
+    font-size:18px;
 }
 
 }
@@ -137,25 +414,101 @@ body{
 
 <body>
 
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="container nav-content">
+
+<div class="logo">
+TechFixGenius
+</div>
+
+<div class="nav-links">
+<a href="#services">Services</a>
+<a href="#projects">Projects</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+
 <section class="hero">
 
-<div class="container">
+<div class="container hero-grid">
 
-<h1>TechFixGenius</h1>
+<div class="hero-text">
+
+<div class="hero-badge">
+Linux Infrastructure Engineer
+</div>
+
+<h1>
+Fixing Linux & Network Problems Before They Become Disasters
+</h1>
 
 <p>
-Linux Infrastructure, Networking, VPN & VoIP Troubleshooting
+Linux administration, VPN infrastructure, VoIP troubleshooting,
+network diagnostics and reliable remote support for businesses worldwide.
 </p>
 
-<a class="btn" href="mailto:yourmail@gmail.com">
+<div class="buttons">
+
+<a class="btn btn-primary" href="mailto:yourmail@gmail.com">
 Contact Me
 </a>
+
+<a class="btn btn-secondary" href="#services">
+Explore Services
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-cards">
+
+<div class="mini-card">
+<h3>Linux</h3>
+<p>
+Server troubleshooting, recovery, optimization and production support.
+</p>
+</div>
+
+<div class="mini-card">
+<h3>VPN</h3>
+<p>
+WireGuard deployment, routing diagnostics and secure remote connectivity.
+</p>
+</div>
+
+<div class="mini-card">
+<h3>VoIP</h3>
+<p>
+Asterisk, SIP troubleshooting, NAT issues and call routing.
+</p>
+</div>
+
+<div class="mini-card">
+<h3>MikroTik</h3>
+<p>
+Firewall, routing, traffic management and infrastructure configuration.
+</p>
+</div>
+
+</div>
 
 </div>
 
 </section>
 
-<section class="section">
+<!-- SERVICES -->
+
+<section id="services">
 
 <div class="container">
 
@@ -163,33 +516,42 @@ Contact Me
 Services
 </h2>
 
+<p class="section-sub">
+Infrastructure troubleshooting and remote support focused on reliability,
+security and fast recovery.
+</p>
+
 <div class="cards">
 
 <div class="card">
+<div class="card-icon">⚙️</div>
 <h3>Linux Administration</h3>
 <p>
-Linux server setup, troubleshooting, monitoring, optimization and infrastructure support.
+Deployment, monitoring, troubleshooting and recovery for Linux servers and infrastructure.
 </p>
 </div>
 
 <div class="card">
-<h3>Networking & VPN</h3>
+<div class="card-icon">🔒</div>
+<h3>VPN & Networking</h3>
 <p>
-WireGuard, MikroTik, routing, firewall, VPN deployment and diagnostics.
+WireGuard, MikroTik, routing, firewall diagnostics and secure network configuration.
 </p>
 </div>
 
 <div class="card">
+<div class="card-icon">📞</div>
 <h3>VoIP & SIP</h3>
 <p>
-Asterisk, SIP trunk configuration, call routing and VoIP troubleshooting.
+Asterisk setup, SIP diagnostics, RTP issues and VoIP infrastructure support.
 </p>
 </div>
 
 <div class="card">
-<h3>Infrastructure Support</h3>
+<div class="card-icon">🚀</div>
+<h3>Infrastructure Recovery</h3>
 <p>
-Docker basics, remote support, service recovery and production issue fixing.
+Emergency troubleshooting, remote support and production incident resolution.
 </p>
 </div>
 
@@ -199,7 +561,9 @@ Docker basics, remote support, service recovery and production issue fixing.
 
 </section>
 
-<section class="section">
+<!-- PROJECTS -->
+
+<section id="projects">
 
 <div class="container">
 
@@ -207,33 +571,37 @@ Docker basics, remote support, service recovery and production issue fixing.
 Recent Work
 </h2>
 
+<p class="section-sub">
+Examples of infrastructure and troubleshooting tasks completed remotely.
+</p>
+
 <div class="cards">
 
 <div class="card">
 <h3>Linux Server Recovery</h3>
 <p>
-Resolved critical service failure and restored production environment stability.
+Restored production environment after critical service failure and stabilized infrastructure.
 </p>
 </div>
 
 <div class="card">
 <h3>WireGuard VPN Deployment</h3>
 <p>
-Configured secure VPN infrastructure for remote connectivity.
+Built secure VPN infrastructure for remote teams and protected connectivity.
 </p>
 </div>
 
 <div class="card">
 <h3>SIP Troubleshooting</h3>
 <p>
-Fixed NAT and RTP routing issue causing one-way audio in VoIP system.
+Resolved one-way audio issue caused by NAT and RTP misconfiguration.
 </p>
 </div>
 
 <div class="card">
-<h3>MikroTik Network Configuration</h3>
+<h3>MikroTik Network Setup</h3>
 <p>
-Configured routing, firewall and traffic management for office infrastructure.
+Configured routing, firewall policies and traffic prioritization for office infrastructure.
 </p>
 </div>
 
@@ -243,7 +611,9 @@ Configured routing, firewall and traffic management for office infrastructure.
 
 </section>
 
-<section class="section">
+<!-- ABOUT -->
+
+<section id="about">
 
 <div class="container">
 
@@ -251,19 +621,32 @@ Configured routing, firewall and traffic management for office infrastructure.
 About Me
 </h2>
 
-<p class="about">
-I help businesses solve Linux, networking, VPN and VoIP problems quickly and efficiently.
-Focused on troubleshooting, infrastructure stability and reliable remote support.
+<div class="about-box">
+
+<p>
+I specialize in Linux infrastructure, networking, VPN systems and VoIP troubleshooting.
+My focus is fast diagnostics, reliable solutions and stable production environments.
+I help businesses solve technical problems remotely with minimal downtime.
 </p>
+
+</div>
 
 </div>
 
 </section>
 
-<section class="footer">
+<!-- FOOTER -->
+
+<section class="footer" id="contact">
+
+<div class="container">
+
+<h3>
+Available Worldwide
+</h3>
 
 <p>
-Available for freelance work worldwide
+Freelance Linux & Infrastructure Support
 </p>
 
 <br>
@@ -275,14 +658,14 @@ Telegram:
 </a>
 </p>
 
-<br>
-
 <p>
 Email:
 <a href="mailto:yourmail@gmail.com">
 yourmail@gmail.com
 </a>
 </p>
+
+</div>
 
 </section>
 
